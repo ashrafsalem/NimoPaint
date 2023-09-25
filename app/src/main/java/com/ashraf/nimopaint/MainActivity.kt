@@ -13,9 +13,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.ashraf.nimopaint.ui.theme.NimoPaintTheme
 
 class MainActivity : ComponentActivity() {
+
+    private var drawingView: DrawingView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        drawingView = findViewById(R.id.drawing_view)
+        drawingView?.setSizeForBrush(20.toFloat())
 //        setContent {
 //            NimoPaintTheme {
 //                // A surface container using the 'background' color from the theme
